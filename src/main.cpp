@@ -2,8 +2,11 @@
 
 int main()
 {
-    auto window = sf::RenderWindow(sf::VideoMode({1920u, 1080u}), "CMake SFML Project");
+    auto window = sf::RenderWindow(sf::VideoMode({1080u, 720u}), "CMake SFML Project");
     window.setFramerateLimit(144);
+    sf::CircleShape circle(50.f);
+    circle.setFillColor(sf::Color::Red);
+    circle.setPosition({100.f, 100.f});
 
     while (window.isOpen())
     {
@@ -16,6 +19,7 @@ int main()
         }
 
         window.clear();
+        window.draw(circle);
         window.display();
     }
 }
